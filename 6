@@ -1,0 +1,7 @@
+subprogramB:
+    # Assume starting address of substring is passed via stack
+    lw $a0, 0($sp)            # Load starting address of substring
+    # Initialization for base-29 conversion
+    li $t2, 0  # Sum of even indices (G)
+    li $t3, 0  # Sum of odd indices (H)
+    li $t4, 0  # Index counter
