@@ -1,0 +1,12 @@
+.data
+input_string: .space 1000    # Reserve space for input string
+
+.text
+.globl main
+main:
+    # Initialize stack and frame pointer if necessary
+    li $v0, 8                 # System call code for reading string
+    la $a0, input_string      # Address of input buffer
+    li $a1, 1000              # Maximum number of characters to read
+    syscall                   # Read string from user
+    
