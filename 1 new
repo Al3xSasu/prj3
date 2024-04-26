@@ -1,0 +1,6 @@
+.data
+input_string: .space 1000    # Reserve space for input string
+results: .asciiz ""          # Store results to print later
+
+.text
+.globl main
