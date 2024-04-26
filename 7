@@ -1,0 +1,11 @@
+process_loop:
+    lb $t1, 0($a0)            # Load byte from substring
+    beq $t1, 0, calculate     # If null-terminator, start calculation
+    addi $a0, $a0, 1          # Move to next character
+    # Here, add conversion logic for '0'-'9', 'a'-'s', 'A'-'S'
+    # Skipped here for brevity; include actual conversion logic
+    j process_loop
+
+calculate:
+    sub $v0, $t2, $t3         # Result is G - H
+    jr $ra                    # Return to caller
