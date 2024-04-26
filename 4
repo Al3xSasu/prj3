@@ -1,0 +1,11 @@
+ # Loop over the string
+split_loop:
+    lb $t1, 0($t0)            # Load a byte from string
+    beq $t1, 0, end_split     # End of string
+    bne $t1, ';', continue    # Check for semicolon
+    # Process substring
+    addi $sp, $sp, -4         # Allocate space on stack
+    sw $t0, 0($sp)            # Push current substring start address
+    jal subprogramB           # Call Subprogram B
+    addi $sp, $sp, 4          # Pop stack
+    # Print result
